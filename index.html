@@ -1,274 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe and Josh - Computer Repair Service</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        body {
-            background-color: #0b0f19;
-            color: #ffffff;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        header {
-            width: 100%;
-            max-width: 600px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .logo h1 {
-            font-size: 24px;
-            font-weight: bold;
-            color: #8b5cf6;
-        }
-
-        .logo p {
-            font-size: 12px;
-            color: #9ca3af;
-        }
-
-        .help-btn {
-            background: rgba(139, 92, 246, 0.2);
-            border: 1px solid #8b5cf6;
-            color: #a78bfa;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .hero-section {
-            width: 100%;
-            max-width: 600px;
-            text-align: left;
-            margin-bottom: 30px;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 12px;
-            color: #9ca3af;
-            margin-bottom: 15px;
-        }
-
-        .hero-section h2 {
-            font-size: 36px;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-
-        .hero-section h2 span {
-            color: #ec4899;
-        }
-
-        .hero-section p {
-            color: #9ca3af;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-
-        .btn.primary {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
-        }
-
-        .btn.secondary {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-
-        .features {
-            width: 100%;
-            max-width: 600px;
-            display: flex;
-            gap: 15px;
-            font-size: 12px;
-            color: #9ca3af;
-            margin-bottom: 40px;
-        }
-
-        .services-section {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .services-section h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .service-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: #8b5cf6;
-            background: rgba(139, 92, 246, 0.05);
-        }
-
-        .card h4 {
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #f3f4f6;
-        }
-
-        .card p {
-            font-size: 13px;
-            color: #9ca3af;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joe & Josh Computer Repair Service</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 450px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #e9ecef;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <h1>Joe and Josh</h1>
-            <p>We Fix. You Relax.</p>
-        </div>
-        <button class="help-btn">🎧 Help Now</button>
-    </header>
+<div class="container">
+  <h2>Service Charge Estimator</h2>
+  
+  <label for="category">Select Category:</label>
+  <select id="category">
+    <option value="Laptop Repair">Laptop Repair</option>
+    <option value="Desktop PC Repair">Desktop PC Repair</option>
+    <option value="Software Issue">Software Issue</option>
+    <option value="Hardware Replacement">Hardware Replacement</option>
+  </select>
 
-    <main>
-        <div class="hero-section">
-            <span class="badge">✨ Smart Help for Your Devices</span>
-            <h2>Computer Problems?<br><span>We've Got You.</span></h2>
-            <p>Tell us what's wrong. Our AI assistant will understand your problem, give an estimate, and our expert will take care of the rest.</p>
-            
-            <button class="btn primary" onclick="startAIChat()">Check My Problem Now →</button>
-            <button class="btn secondary">▶ How It Works</button>
-        </div>
+  <label for="problem">Describe the Problem:</label>
+  <textarea id="problem" rows="4" placeholder="Describe what issue you are facing..."></textarea>
 
-        <div class="features">
-            <div class="feature-item">🛡️ Trusted Service</div>
-            <div class="feature-item">⚡ Fast Response</div>
-            <div class="feature-item">🏷️ Affordable Price</div>
-        </div>
+  <button onclick="calculateCharge()">Calculate Charge</button>
 
-        <section class="services-section">
-            <h3>Our Services</h3>
-            <div class="service-cards">
-                
-                <div class="card" onclick="startAIChat()">
-                    <h4>💻 Software & Game Setup</h4>
-                    <p>Software installation, OS updates, and gaming setups.</p>
-                </div>
+  <div id="result">
+    <h3>Estimation Result:</h3>
+    <p><strong>Difficulty Level:</strong> <span id="level"></span></p>
+    <p><strong>Estimated Price:</strong> ₹<span id="price"></span></p>
+    <p><strong>Reason:</strong> <span id="reason"></span></p>
+  </div>
+</div>
 
-                <div class="card" onclick="startAIChat()">
-                    <h4>🔧 PC & Laptop Troubleshooting</h4>
-                    <p>Fix slow performance, system crashes, and errors.</p>
-                </div>
+<script>
+  async function calculateCharge() {
+    const category = document.getElementById('category').value;
+    const problem = document.getElementById('problem').value;
+    const resultDiv = document.getElementById('result');
 
-                <div class="card" onclick="startAIChat()">
-                    <h4>🛡️ Virus & Security</h4>
-                    <p>Malware removal, antivirus setup, and security checks.</p>
-                </div>
+    if (!problem.trim()) {
+      alert("Please describe the problem first.");
+      return;
+    }
 
-            </div>
-        </section>
-    </main>
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = "Calculating estimate...";
 
-    <script>
-        async function startAIChat() {
-            const category = prompt("Please select your service category:\n1. Software & Game Setup\n2. PC & Laptop Troubleshooting\n3. Virus & Security\n4. Hardware Services");
-            if (!category) return;
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzBNi7x1nduDcVHo7N7pUZZFqdwmj_2oZiUEegklm2vA5obYtQQssj-Ey90ZrI5txEY/exec";
 
-            const problemDetails = prompt("Please describe your computer issue clearly:");
-            if (!problemDetails) return;
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ category: category, problem: problem })
+      });
 
-            // സ്ക്രീൻഷോട്ടിൽ നിന്നുള്ള പുതിയ API Key
-            const apiKey = "AQ.Ab8RN6K7grADxM07KWCWUfnnBOQCyjZe9lAtRVrXxJFrYBUtrQ"; 
-            
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+      const data = await response.json();
+      const aiResponse = JSON.parse(data.candidates[0].content.parts[0].text);
 
-            const promptText = `
-            You are an AI assistant for Joe and Josh, a computer repair service.
-            Calculate an estimated service charge based ONLY on these strict pricing rules:
+      resultDiv.innerHTML = `
+        <h3>Estimation Result:</h3>
+        <p><strong>Difficulty Level:</strong> ${aiResponse.level}</p>
+        <p><strong>Estimated Price:</strong> ₹${aiResponse.price}</p>
+        <p><strong>Reason:</strong> ${aiResponse.reason}</p>
+      `;
+    } catch (error) {
+      resultDiv.innerHTML = "<p style='color:red;'>Failed to get estimate. Please try again later.</p>";
+      console.error(error);
+    }
+  }
+</script>
 
-            --- PRICING RULES ---
-            1. If difficulty is Easy: price = 25
-            2. If difficulty is Medium: price = 75
-            3. If difficulty is Hard: price = 100
-
-            --- CUSTOMER DETAILS ---
-            Category Selected: ${category}
-            Customer Problem: ${problemDetails}
-
-            Respond STRICTLY in this valid JSON format (no extra text or markdown):
-            {
-              "level": "Easy / Medium / Hard",
-              "price": "25 / 75 / 100",
-              "reason": "Write a short reason in one sentence in ENGLISH."
-            }
-            `;
-
-            try {
-                const response = await fetch(url, {
-                    method: "POST",
-                    headers: { 
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }] })
-                });
-
-                const data = await response.json();
-                
-                if (data.error) {
-                    alert(`API Error: ${data.error.message}`);
-                    return;
-                }
-
-                let rawResult = data.candidates[0].content.parts[0].text.replace(/```json/g, "").replace(/```/g, "").trim();
-                const aiData = JSON.parse(rawResult);
-
-                alert(`Joe and Josh AI Estimate:\n\nCategory: ${category}\nLevel: ${aiData.level}\nEstimated Rate: ₹${aiData.price}\n\nReason: ${aiData.reason}`);
-
-            } catch (error) {
-                alert("Error: " + error.message);
-            }
-        }
-    </script>
 </body>
 </html>
 
