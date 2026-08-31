@@ -217,10 +217,9 @@
             const problemDetails = prompt("Please describe your computer issue clearly:");
             if (!problemDetails) return;
 
-            // API Key 
             const apiKey = "AQ.Ab8RN6J5amEAcevgnetO-Z9wSC7-yM9mm_uui-OVHVPMkGoJuA"; 
             
-            // URL അപ്ഡേറ്റ് ചെയ്തു (gemini-2.5-flash / gemini-1.5-flash-latest)
+            // updated to gemini-2.5-flash
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
             const promptText = `
