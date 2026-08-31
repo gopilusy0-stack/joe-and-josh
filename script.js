@@ -1,7 +1,16 @@
-async function getAIRateEstimate(category, problemDetails) {
-    // 1. നിങ്ങളുടെ API Key ഡബിൾ കോട്ടുകൾക്കുള്ളിൽ നൽകിയിരിക്കുന്നു
-    const apiKey = "AQ.Ab8RN6KB156QiX3wQ864BJKYiSvH-4L5JdECQc4FUEn7KrHrgA"; 
+async function startAIChat() {
+    // 1. Asking user to select service category in English
+    const category = prompt("Please select your service category:\n1. Software & Game Setup\n2. PC & Laptop Troubleshooting\n3. Virus & Security\n4. Hardware Services");
     
+    if (!category) return; // Stop process if user cancels
+
+    // 2. Asking user to describe their issue in English
+    const problemDetails = prompt("Please describe your computer issue clearly:");
+    
+    if (!problemDetails) return;
+
+    // 3. Updated Gemini API Key
+    const apiKey = "AQ.Ab8RN6IfrFC_OEDnkqcW7bdonREj8Vz64rU8lluRYSYoqkM5Fw"; 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
     const promptText = `
@@ -21,7 +30,7 @@ async function getAIRateEstimate(category, problemDetails) {
     {
       "level": "Easy / Medium / Hard",
       "price": "25 / 75 / 100",
-      "reason": "കാരണം മലയാളത്തിൽ ഒരു വരിയിൽ എഴുതുക"
+      "reason": "Write a short reason in one sentence in ENGLISH."
     }
     `;
 
@@ -33,12 +42,19 @@ async function getAIRateEstimate(category, problemDetails) {
         });
 
         const data = await response.json();
+        
+        if (data.error) {
+            alert(`API Error: ${data.error.message}`);
+            return;
+        }
+
         let rawResult = data.candidates[0].content.parts[0].text.replace(/```json/g, "").replace(/```/g, "").trim();
         const aiData = JSON.parse(rawResult);
 
-        alert(`Joe and Josh AI Estimate:\n\nService: ${category}\nLevel: ${aiData.level}\nEstimated Rate: ₹${aiData.price}\n\nReason: ${aiData.reason}`);
+        // Showing output in full English
+        alert(`Joe and Josh AI Estimate:\n\nCategory: ${category}\nLevel: ${aiData.level}\nEstimated Rate: ₹${aiData.price}\n\nReason: ${aiData.reason}`);
 
     } catch (error) {
-        alert("AI കണക്റ്റ് ചെയ്യുന്നതിൽ ചെറിയൊരു പ്രശ്നം വന്നു. വീണ്ടും ശ്രമിക്കുക.");
+        alert("Error: " + error.message);
     }
 }
