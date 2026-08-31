@@ -1,5 +1,6 @@
 async function getAIRateEstimate(category, problemDetails) {
-    const apiKey =AQ.Ab8RN6KBl56Qix3wQ864BJKYiSvH-4L5JdECQc4fUEn7KrHrgA
+    // 1. നിങ്ങളുടെ API Key ഡബിൾ കോട്ടുകൾക്കുള്ളിൽ നൽകിയിരിക്കുന്നു
+    const apiKey = "AQ.Ab8RN6KB156QiX3wQ864BJKYiSvH-4L5JdECQc4FUEn7KrHrgA"; 
     
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
