@@ -217,8 +217,9 @@
             const problemDetails = prompt("Please describe your computer issue clearly:");
             if (!problemDetails) return;
 
-            const apiKey = "AQ.Ab8RN6IfrFC_OEDnkqcW7bdonREj8Vz64rU8lluRYSYoqkM5Fw"; 
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            // നിങ്ങളുടെ പൂർണ്ണമായ API Key ഇവിടെ ചേർത്തു
+            const apiKey = "AQ.Ab8RN6J5amEAcevgnetO-Z9wSC7-yM9mm_uui-OVHVPMkGoJuA"; 
+            const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent";
 
             const promptText = `
             You are an AI assistant for Joe and Josh, a computer repair service.
@@ -244,7 +245,10 @@
             try {
                 const response = await fetch(url, {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "x-goog-api-key": apiKey 
+                    },
                     body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }] })
                 });
 
@@ -267,3 +271,4 @@
     </script>
 </body>
 </html>
+
