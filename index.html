@@ -3,190 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe and Josh - Tech Solutions</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Joe and Josh - Computer Repair Service</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#0b0f19] text-white font-sans antialiased">
+<body>
 
-    <!-- Header / Navbar -->
-    <header class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-            <span class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                Joe and Josh
-            </span>
-            <span class="text-xs text-gray-400 block">We Fix. You Relax.</span>
+    <header>
+        <div class="logo">
+            <h1>Joe and Josh</h1>
+            <p>We Fix. You Relax.</p>
         </div>
-        <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
-            <a href="#" class="text-blue-400">Home</a>
-            <a href="#" class="hover:text-white transition">How It Works</a>
-            <a href="#" class="hover:text-white transition">Services</a>
-            <a href="#" class="hover:text-white transition">About Us</a>
-            <a href="#" class="hover:text-white transition">FAQ</a>
-            <a href="#" class="hover:text-white transition">Contact</a>
-        </nav>
-        <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center space-x-2 hover:opacity-90 transition">
-            <i class="fa-solid fa-headset"></i>
-            <span>Help Now</span>
-        </button>
+        <button class="help-btn">🎧 Help Now</button>
     </header>
 
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-            <div class="inline-flex items-center space-x-2 bg-gray-800/80 px-3 py-1 rounded-full border border-gray-700 text-xs text-gray-300 mb-6">
-                <span>✨ Smart Help for Your Devices</span>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
-                Computer Problems?<br>
-                <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">We've Got You.</span>
-            </h1>
-            <p class="text-gray-400 mb-8 max-w-lg">
-                Tell us what's wrong. Our AI assistant will understand your problem, give an estimate, and our expert will take care of the rest.
-            </p>
-            <div class="flex flex-wrap gap-4 mb-10">
-                <button class="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 rounded-full font-medium flex items-center space-x-2 hover:opacity-90">
-                    <span>Check My Problem Now</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
-                <button class="border border-gray-700 hover:bg-gray-800 px-6 py-3 rounded-full font-medium flex items-center space-x-2 transition">
-                    <i class="fa-regular fa-circle-play"></i>
-                    <span>How It Works</span>
-                </button>
-            </div>
-            <div class="flex items-center space-x-6 text-xs text-gray-400">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-shield-halved text-blue-400"></i>
-                    <span>Trusted Service</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-bolt text-yellow-400"></i>
-                    <span>Fast Response</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-tag text-green-400"></i>
-                    <span>Affordable Price</span>
-                </div>
-            </div>
+    <main>
+        <div class="hero-section">
+            <span class="badge">✨ Smart Help for Your Devices</span>
+            <h2>Computer Problems?<br><span>We've Got You.</span></h2>
+            <p>Tell us what's wrong. Our AI assistant will understand your problem, give an estimate, and our expert will take care of the rest.</p>
+            
+            <button class="btn primary" onclick="startAIChat()">Check My Problem Now →</button>
+            <button class="btn secondary">▶ How It Works</button>
         </div>
-        <div class="relative flex justify-center">
-            <div class="w-full max-w-md bg-gradient-to-tr from-purple-900/30 to-blue-900/30 p-6 rounded-2xl border border-gray-800 shadow-2xl backdrop-blur-sm">
-                <div class="h-64 bg-gray-900 rounded-lg flex flex-col items-center justify-center border border-gray-800">
-                    <i class="fa-solid fa-laptop-code text-6xl text-purple-500 mb-4 animate-pulse"></i>
-                    <span class="text-xl font-bold">Joe and Josh</span>
-                    <p class="text-xs text-gray-500 mt-1">Expert Device Support</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Stats Bar -->
-    <section class="max-w-6xl mx-auto my-8 px-6">
-        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-                <h3 class="text-2xl font-bold text-white">500+</h3>
-                <p class="text-xs text-gray-400 mt-1">Happy Customers</p>
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold text-white">800+</h3>
-                <p class="text-xs text-gray-400 mt-1">Problems Solved</p>
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold text-white">24/7</h3>
-                <p class="text-xs text-gray-400 mt-1">Support Available</p>
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold text-white">4.9/5</h3>
-                <p class="text-xs text-gray-400 mt-1">Customer Rating</p>
-            </div>
+        <div class="features">
+            <div class="feature-item">🛡️ Trusted Service</div>
+            <div class="feature-item">⚡ Fast Response</div>
+            <div class="feature-item">🏷️ Affordable Price</div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
-        <div class="text-center mb-12">
-            <span class="text-xs bg-blue-900/40 text-blue-400 px-3 py-1 rounded-full border border-blue-800">What We Do</span>
-            <h2 class="text-3xl font-bold mt-3">Our <span class="text-blue-500">Services</span></h2>
-            <p class="text-gray-400 text-sm mt-1">We fix a wide range of computer and software issues</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-2xl hover:border-purple-500/50 transition">
-                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                    <i class="fa-solid fa-desktop"></i>
+        <!-- പഴയ സേവനങ്ങളുടെ കാർഡുകൾ (Service Cards) -->
+        <section class="services-section">
+            <h3>Our Services</h3>
+            <div class="service-cards">
+                
+                <div class="card" onclick="startAIChat()">
+                    <h4>💻 Software & Game Setup</h4>
+                    <p>Software installation, OS updates, and gaming setups.</p>
                 </div>
-                <div onclick="getAIRateEstimate('PC & Laptop Troubleshooting', prompt('നിങ്ങളുടെ പ്രശ്നം ടൈപ്പ് ചെയ്യുക:'))" class="bg-gray-900/40 border border-gray-800 p-6 rounded-2xl hover:border-blue-500/50 transition duration-300">
-">PC & Laptop Troubleshooting
-                <p class="text-gray-400 text-xs mb-4">Slow PC, errors, crashes, lagging and more.</p>
-                <a href="#" class="text-xs text-blue-400 font-medium flex items-center space-x-1 hover:underline">
-                    <span>Learn More</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-            <!-- Card 2 -->
-            <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-2xl hover:border-purple-500/50 transition">
-                <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                    <i class="fa-brands fa-windows"></i>
-                </div>
-                <h3 class="font-bold mb-2">Windows Support</h3>
-                <p class="text-gray-400 text-xs mb-4">Installation, update issues, settings & more.</p>
-                <a href="#" class="text-xs text-blue-400 font-medium flex items-center space-x-1 hover:underline">
-                    <span>Learn More</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-            <!-- Card 3 -->
-            <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-2xl hover:border-purple-500/50 transition">
-                <div class="w-12 h-12 bg-green-500/10 text-green-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                    <i class="fa-solid fa-download"></i>
-                </div>
-                <h3 class="font-bold mb-2">Software Installation</h3>
-                <p class="text-gray-400 text-xs mb-4">Install & setup any software you need.</p>
-                <a href="#" class="text-xs text-blue-400 font-medium flex items-center space-x-1 hover:underline">
-                    <span>Learn More</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-950 border-t border-gray-900 mt-12 py-10">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-                <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                    Joe and Josh
-                </span>
-                <p class="text-gray-400 text-xs mt-3">Smart computer support for everyone. Fast, reliable and affordable.</p>
+                <div class="card" onclick="startAIChat()">
+                    <h4>🔧 PC & Laptop Troubleshooting</h4>
+                    <p>Fix slow performance, system crashes, and errors.</p>
+                </div>
+
+                <div class="card" onclick="startAIChat()">
+                    <h4>🛡️ Virus & Security</h4>
+                    <p>Malware removal, antivirus setup, and security checks.</p>
+                </div>
+
             </div>
-            <div>
-                <h4 class="font-semibold text-sm mb-3">Quick Links</h4>
-                <ul class="text-xs text-gray-400 space-y-2">
-                    <li><a href="#" class="hover:text-white">Home</a></li>
-                    <li><a href="#" class="hover:text-white">Services</a></li>
-                    <li><a href="#" class="hover:text-white">About Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold text-sm mb-3">Contact Us</h4>
-                <p class="text-xs text-gray-400 space-y-1">
-                    <span>+91 12345 67890</span><br>
-                    <span>support@joeandjosh.com</span><br>
-                    <span>Kerala, India</span>
-                </p>
-            </div>
-            <div>
-                <h4 class="font-semibold text-sm mb-3">Newsletter</h4>
-                <input type="email" placeholder="Enter your email" class="bg-gray-900 border border-gray-800 text-xs px-3 py-2 rounded w-full mb-2 focus:outline-none">
-                <button class="bg-blue-600 text-xs w-full py-2 rounded font-medium hover:bg-blue-700">Subscribe</button>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 border-t border-gray-900 pt-4 flex justify-between text-xs text-gray-500">
-            <p>© 2026 Joe and Josh. All rights reserved.</p>
-            <div class="space-x-4">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-<script src="script.js"></script>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
-  </html>
+</html>
+
