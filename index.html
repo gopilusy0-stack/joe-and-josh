@@ -6,15 +6,9 @@
 
 <title>Joe & Josh | Smart Computer & Tech Support</title>
 
-<meta name="description"
-content="Joe & Josh Smart Computer and Tech Support">
-
 <style>
-
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -22,331 +16,669 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #070b14;
+  background: #f1f5f9;
+  color: #111827;
+}
+
+/* HEADER */
+
+header {
+  background: #080d18;
   color: white;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* NAVBAR */
-
-.navbar {
-  height: 72px;
-  background: #060a12;
-  border-bottom: 1px solid #20283a;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 6%;
+  padding: 16px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+.header-inner {
+  max-width: 1050px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
 .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 19px;
-  font-weight: 800;
-}
-
-.logo-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg,#1683ff,#9b3cff);
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: #cbd5e1;
-  font-size: 14px;
-}
-
-.nav-links a:hover {
-  color: white;
-}
-
-.nav-button {
-  background: linear-gradient(100deg,#147cff,#a43cff);
-  padding: 11px 17px;
-  color: white;
-  border-radius: 10px;
+  font-size: 27px;
   font-weight: bold;
-  font-size: 13px;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.tagline {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 3px;
 }
 
 /* HERO */
 
 .hero {
-  min-height: 600px;
-  padding: 80px 6%;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
   background:
-  radial-gradient(circle at 80% 45%,#17396f 0,#09111f 35%,#050811 75%);
+    radial-gradient(circle at 15% 20%, rgba(37,99,235,.35), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(147,51,234,.30), transparent 35%),
+    #080d18;
+  color: white;
+  text-align: center;
+  padding: 70px 20px 90px;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .badge {
   display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid #ffffff20;
-  background: #ffffff08;
-  color: #b9d6ff;
-  font-size: 12px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.10);
+  color: #c7d2fe;
+  font-size: 13px;
   font-weight: bold;
 }
 
 .hero h1 {
-  font-size: clamp(45px,7vw,75px);
+  font-size: clamp(40px, 8vw, 70px);
   line-height: 1;
-  margin: 25px 0;
+  margin: 20px 0;
 }
 
 .gradient {
-  background: linear-gradient(90deg,#219cff,#a43cff);
+  background: linear-gradient(90deg, #60a5fa, #c084fc);
   -webkit-background-clip: text;
-  background-clip: text;
   color: transparent;
 }
 
 .hero p {
-  max-width: 620px;
+  max-width: 650px;
+  margin: auto;
   color: #cbd5e1;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 14px;
-  margin-top: 30px;
-}
-
-.primary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 22px;
-  border-radius: 12px;
-  background: linear-gradient(100deg,#147cff,#a43cff);
-  color: white;
-  font-weight: bold;
-}
-
-.secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 22px;
-  border-radius: 12px;
-  border: 1px solid #526078;
-  color: white;
-  font-weight: bold;
-}
-
-.trust {
-  display: flex;
-  gap: 25px;
-  margin-top: 28px;
-  color: #aeb9ca;
-  font-size: 13px;
-}
-
-/* HERO GRAPHIC */
-
-.hero-graphic {
-  height: 390px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.glow {
-  position: absolute;
-  width: 330px;
-  height: 330px;
-  border-radius: 50%;
-  background: #197cff35;
-  filter: blur(60px);
-}
-
-.monitor {
-  position: relative;
-  font-size: 175px;
-  filter: drop-shadow(0 25px 35px #00000090);
-}
-
-.laptop {
-  position: absolute;
-  right: 10%;
-  bottom: 5%;
-  font-size: 105px;
-}
-
-.tools {
-  position: absolute;
-  right: 7%;
-  top: 10%;
-  width: 105px;
-  height: 105px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #071020;
-  border: 3px solid #278cff;
-  font-size: 48px;
-}
-
-/* STATS */
-
-.stats {
-  margin: -30px 5% 0;
-  position: relative;
-  z-index: 5;
-  background: #111827;
-  border-radius: 20px;
-  padding: 28px;
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  box-shadow: 0 20px 45px #00000040;
-}
-
-.stat {
-  text-align: center;
-  border-right: 1px solid #334155;
-}
-
-.stat:last-child {
-  border-right: none;
-}
-
-.stat strong {
-  display: block;
-  font-size: 22px;
-  margin-bottom: 5px;
-}
-
-.stat span {
-  color: #94a3b8;
-  font-size: 13px;
-}
-
-/* SECTION */
-
-.section {
-  padding: 90px 6%;
-}
-
-.heading {
-  max-width: 750px;
-  text-align: center;
-  margin: 0 auto 45px;
-}
-
-.heading-label {
+.hero-button {
   display: inline-block;
-  padding: 8px 13px;
-  border-radius: 999px;
-  background: #eaf1ff;
-  color: #2457c5;
-  font-size: 12px;
+  margin-top: 28px;
+  padding: 15px 25px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  color: white;
+  text-decoration: none;
   font-weight: bold;
 }
 
-.heading h2 {
-  font-size: 43px;
-  margin: 15px 0;
+/* MAIN */
+
+main {
+  max-width: 1050px;
+  margin: -35px auto 50px;
+  padding: 0 18px;
 }
 
-.heading p {
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 45px rgba(15,23,42,.10);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.subtitle {
   color: #64748b;
   line-height: 1.6;
 }
 
-/* SERVICES */
+/* FORM */
 
-.services {
-  max-width: 1150px;
-  margin: auto;
+.grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
 
-.service {
-  background: #111827;
-  border: 1px solid #20283a;
-  border-radius: 18px;
-  padding: 28px;
-  min-height: 185px;
+.full {
+  grid-column: 1 / -1;
 }
 
-.service-icon {
-  font-size: 30px;
-  margin-bottom: 18px;
-}
-
-.service h3 {
-  margin-bottom: 8px;
-}
-
-.service p {
-  color: #94a3b8;
-  line-height: 1.55;
-  font-size: 14px;
-}
-
-/* REQUEST SECTION */
-
-.request-section {
-  background: #eef2f8;
-  color: #111827;
-}
-
-.form-container {
-  max-width: 650px;
-  margin: auto;
-}
-
-.form-box {
-  background: white;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 15px 40px #00000018;
-}
-
-.form-box h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-.form-box > p {
-  color: #64748b;
-  margin-bottom: 25px;
+.field {
+  margin-top: 15px;
 }
 
 label {
   display: block;
-  margin: 15px 0 8px;
+  margin-bottom: 8px;
   font-size: 14px;
-  font
+  font-weight: bold;
+  color: #334155;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+  background: #f8fafc;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #6366f1;
+  background: white;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* ANALYZE */
+
+.analyze-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* RESULT */
+
+#result {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-label {
+  color: #64748b;
+}
+
+.result-value {
+  font-weight: bold;
+}
+
+.price {
+  color: #16a34a;
+  font-size: 24px;
+}
+
+.note {
+  margin-top: 15px;
+  padding: 14px;
+  border-radius: 10px;
+  background: white;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* REQUEST */
+
+.request-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #111827;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* PROCESS */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  text-align: center;
+}
+
+.step {
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+}
+
+.step-icon {
+  font-size: 32px;
+}
+
+.step h3 {
+  margin-bottom: 5px;
+}
+
+.step p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+
+footer {
+  background: #080d18;
+  color: #94a3b8;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer strong {
+  color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding: 55px 18px 75px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .result-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="header-inner">
+
+    <div class="logo">J</div>
+
+    <div>
+      <div class="brand">JOE &amp; JOSH</div>
+
+      <div class="tagline">
+        Smart Computer &amp; Tech Support
+      </div>
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <span class="badge">
+      COMPUTER &amp; TECH SUPPORT
+    </span>
+
+    <h1>
+      We Fix.<br>
+      <span class="gradient">You Relax.</span>
+    </h1>
+
+    <p>
+      Having a computer problem?
+      Describe your problem, get a quick starting estimate,
+      and send your support request to Joe &amp; Josh.
+    </p>
+
+    <a href="#estimator" class="hero-button">
+      Get Started →
+    </a>
+
+  </div>
+
+</section>
+
+
+<main>
+
+
+<!-- ESTIMATOR -->
+
+<section class="card" id="estimator">
+
+  <h2>✨ Smart Service Estimator</h2>
+
+  <p class="subtitle">
+    Tell us about your problem and we'll give you
+    an approximate starting service charge.
+  </p>
+
+
+  <div class="grid">
+
+
+    <!-- NAME -->
+
+    <div class="field">
+
+      <label>
+        Customer Name
+      </label>
+
+      <input
+        type="text"
+        id="customerName"
+        placeholder="Your name"
+      >
+
+    </div>
+
+
+    <!-- PHONE -->
+
+    <div class="field">
+
+      <label>
+        Phone Number
+      </label>
+
+      <input
+        type="tel"
+        id="customerPhone"
+        placeholder="Your phone number"
+      >
+
+    </div>
+
+
+    <!-- CATEGORY -->
+
+    <div class="field full">
+
+      <label>
+        Service Category
+      </label>
+
+      <select id="category">
+
+        <option value="">
+          Select a service
+        </option>
+
+        <option value="Laptop Repair">
+          💻 Laptop Repair
+        </option>
+
+        <option value="Desktop PC Repair">
+          🖥️ Desktop PC Repair
+        </option>
+
+        <option value="Software Issue">
+          ⚙️ Software Issue
+        </option>
+
+        <option value="Game / App Issue">
+          🎮 Game / App Issue
+        </option>
+
+        <option value="Hardware Replacement">
+          🔧 Hardware Replacement
+        </option>
+
+        <option value="Other Tech Support">
+          🛠️ Other Tech Support
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <!-- PROBLEM -->
+
+    <div class="field full">
+
+      <label>
+        Describe Your Problem
+      </label>
+
+      <textarea
+        id="problem"
+        placeholder="Example: My laptop is slow, game is not opening, Wi-Fi is not working..."
+      ></textarea>
+
+    </div>
+
+  </div>
+
+
+  <!-- ANALYZE -->
+
+  <button
+    type="button"
+    class="analyze-button"
+    onclick="calculateEstimate()"
+  >
+    🔍 Analyze My Problem
+  </button>
+
+
+  <!-- RESULT -->
+
+  <div id="result">
+
+    <div class="result-row">
+
+      <span class="result-label">
+        Difficulty
+      </span>
+
+      <span
+        class="result-value"
+        id="difficulty"
+      >
+        —
+      </span>
+
+    </div>
+
+
+    <div class="result-row">
+
+      <span class="result-label">
+        Starting Estimate
+      </span>
+
+      <span
+        class="result-value price"
+        id="price"
+      >
+        —
+      </span>
+
+    </div>
+
+
+    <div class="note">
+
+      <strong>Note:</strong>
+      This is an approximate starting estimate.
+      The final charge may change after checking the actual problem.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- CUSTOMER REQUEST -->
+
+<section class="card">
+
+  <h2>📩 Send Support Request</h2>
+
+  <p class="subtitle">
+    After checking your estimate, send your request to Joe &amp; Josh.
+  </p>
+
+
+  <form
+    id="supportForm"
+    action="https://formspree.io/f/xvkozjjq"
+    method="POST"
+  >
+
+
+    <div class="field">
+
+      <label>
+        Name *
+      </label>
+
+      <input
+        type="text"
+        name="customer_name"
+        id="formName"
+        required
+        placeholder="Customer name"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Phone *
+      </label>
+
+      <input
+        type="tel"
+        name="phone"
+        id="formPhone"
+        required
+        placeholder="Phone number"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Service
+      </label>
+
+      <select
+        name="service"
+        id="formCategory"
+      >
+
+        <option>Laptop Repair</option>
+        <option>Desktop PC Repair</option>
+        <option>Software Issue</option>
+        <option>Game / App Issue</option>
+        <option>Hardware Replacement</option>
+        <option>Other Tech Support</option>
+
+      </select>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Problem *
+      </label>
+
+      <textarea
+        name="problem"
+        id="formProblem"
+        required
+        placeholder="Describe your problem..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Estimated Price
+      </label>
+
+      <input
+        type="text"
+        name="estimated_price"
+        id="formPrice"
+        value="
