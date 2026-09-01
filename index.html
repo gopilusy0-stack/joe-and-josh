@@ -22,13 +22,12 @@ body {
   color: #111827;
 }
 
+/* HEADER */
+
 header {
   background: #080d18;
   color: white;
   padding: 16px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 .header-inner {
@@ -62,11 +61,14 @@ header {
   margin-top: 3px;
 }
 
+/* HERO */
+
 .hero {
   background:
     radial-gradient(circle at 15% 20%, rgba(37,99,235,.35), transparent 35%),
     radial-gradient(circle at 85% 30%, rgba(147,51,234,.30), transparent 35%),
     #080d18;
+
   color: white;
   text-align: center;
   padding: 70px 20px 90px;
@@ -96,6 +98,7 @@ header {
 .gradient {
   background: linear-gradient(90deg, #60a5fa, #c084fc);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -117,6 +120,8 @@ header {
   text-decoration: none;
   font-weight: bold;
 }
+
+/* MAIN */
 
 main {
   max-width: 1050px;
@@ -141,6 +146,8 @@ main {
   color: #64748b;
   line-height: 1.6;
 }
+
+/* FORM */
 
 .grid {
   display: grid;
@@ -188,6 +195,8 @@ textarea {
   resize: vertical;
 }
 
+/* BUTTONS */
+
 .analyze-button,
 .request-button {
   width: 100%;
@@ -209,11 +218,11 @@ textarea {
   background: #111827;
 }
 
-.analyze-button:disabled,
-.request-button:disabled {
+button:disabled {
   opacity: .6;
-  cursor: not-allowed;
 }
+
+/* LOADING */
 
 #loading {
   display: none;
@@ -222,20 +231,22 @@ textarea {
   color: #64748b;
 }
 
+/* RESULT */
+
 #result {
   display: none;
   margin-top: 20px;
-  padding: 22px;
+  padding: 20px;
   border-radius: 16px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
 }
 
 .result-box {
-  padding: 16px;
   background: white;
-  border-radius: 12px;
+  padding: 16px;
   margin-top: 12px;
+  border-radius: 12px;
   line-height: 1.6;
 }
 
@@ -243,21 +254,24 @@ textarea {
   font-size: 13px;
   font-weight: bold;
   color: #64748b;
-  margin-bottom: 5px;
-  text-transform: uppercase;
+  margin-bottom: 6px;
 }
+
+/* SEND REQUEST */
 
 #sendSection {
   display: none;
 }
 
 .status {
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 10px;
   display: none;
-  font-size: 14px;
+  margin-top: 15px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f1f5f9;
 }
+
+/* STEPS */
 
 .steps {
   display: grid;
@@ -286,6 +300,8 @@ textarea {
   line-height: 1.5;
 }
 
+/* FOOTER */
+
 footer {
   background: #080d18;
   color: #94a3b8;
@@ -296,6 +312,8 @@ footer {
 footer strong {
   color: white;
 }
+
+/* MOBILE */
 
 @media (max-width: 700px) {
 
@@ -330,24 +348,36 @@ footer strong {
 </style>
 </head>
 
+
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
   <div class="header-inner">
 
     <div class="logo">J</div>
 
     <div>
-      <div class="brand">JOE &amp; JOSH</div>
+
+      <div class="brand">
+        JOE &amp; JOSH
+      </div>
 
       <div class="tagline">
         Smart Computer &amp; Tech Support
       </div>
+
     </div>
 
   </div>
+
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -359,4 +389,774 @@ footer strong {
 
     <h1>
       We Fix.<br>
-      <span class="gradient">You Relax.</span
+      <span class="gradient">
+        You Relax.
+      </span>
+    </h1>
+
+    <p>
+      Having a computer problem?
+      Describe your problem and let our smart support assistant
+      analyze it before you send your support request.
+    </p>
+
+    <a
+      href="#analyzer"
+      class="hero-button"
+    >
+      Get Started →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main>
+
+
+<!-- ANALYZER -->
+
+<section
+  class="card"
+  id="analyzer"
+>
+
+  <h2>
+    🤖 Smart Problem Analyzer
+  </h2>
+
+  <p class="subtitle">
+    Tell us about your computer problem.
+    Our smart assistant will analyze the information
+    and show a possible problem and likely reason.
+  </p>
+
+
+  <div class="grid">
+
+
+    <!-- NAME -->
+
+    <div class="field">
+
+      <label>
+        Customer Name
+      </label>
+
+      <input
+        id="customerName"
+        type="text"
+        placeholder="Your name"
+      >
+
+    </div>
+
+
+    <!-- PHONE -->
+
+    <div class="field">
+
+      <label>
+        Phone Number
+      </label>
+
+      <input
+        id="customerPhone"
+        type="tel"
+        placeholder="Your phone number"
+      >
+
+    </div>
+
+
+    <!-- CATEGORY -->
+
+    <div class="field full">
+
+      <label>
+        Service Category
+      </label>
+
+      <select id="category">
+
+        <option value="">
+          Select a service
+        </option>
+
+        <option value="Laptop Repair">
+          💻 Laptop Repair
+        </option>
+
+        <option value="Desktop PC Repair">
+          🖥️ Desktop PC Repair
+        </option>
+
+        <option value="Software Issue">
+          ⚙️ Software Issue
+        </option>
+
+        <option value="Game / App Issue">
+          🎮 Game / App Issue
+        </option>
+
+        <option value="Hardware Replacement">
+          🔧 Hardware Replacement
+        </option>
+
+        <option value="Other Tech Support">
+          🛠️ Other Tech Support
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <!-- PROBLEM -->
+
+    <div class="field full">
+
+      <label>
+        Describe Your Problem
+      </label>
+
+      <textarea
+        id="problem"
+        placeholder="Example: My laptop is very slow and sometimes freezes..."
+      ></textarea>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- ANALYZE BUTTON -->
+
+  <button
+    id="analyzeButton"
+    class="analyze-button"
+    type="button"
+  >
+    🤖 Analyze My Problem
+  </button>
+
+
+  <div id="loading">
+    ⏳ Analyzing your problem...
+  </div>
+
+
+  <!-- RESULT -->
+
+  <div id="result">
+
+    <h3>
+      Analysis Result
+    </h3>
+
+
+    <div class="result-box">
+
+      <div class="result-title">
+        POSSIBLE PROBLEM
+      </div>
+
+      <div id="possibleProblem">
+        —
+      </div>
+
+    </div>
+
+
+    <div class="result-box">
+
+      <div class="result-title">
+        LIKELY REASON
+      </div>
+
+      <div id="reason">
+        —
+      </div>
+
+    </div>
+
+
+    <div class="result-box">
+
+      <strong>
+        Note:
+      </strong>
+
+      This is only an initial analysis.
+      The actual cause can only be confirmed
+      after checking the device.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SEND REQUEST -->
+
+<section
+  class="card"
+  id="sendSection"
+>
+
+  <h2>
+    📩 Send Support Request
+  </h2>
+
+  <p class="subtitle">
+    Your problem has been analyzed.
+    Send the details to Joe &amp; Josh for support.
+  </p>
+
+
+  <form
+    id="supportForm"
+    action="https://formspree.io/f/xvkozjjq"
+    method="POST"
+  >
+
+
+    <div class="field">
+
+      <label>
+        Name *
+      </label>
+
+      <input
+        id="formName"
+        name="customer_name"
+        type="text"
+        required
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Phone *
+      </label>
+
+      <input
+        id="formPhone"
+        name="phone"
+        type="tel"
+        required
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Service
+      </label>
+
+      <input
+        id="formCategory"
+        name="service"
+        type="text"
+        readonly
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Customer Problem *
+      </label>
+
+      <textarea
+        id="formProblem"
+        name="problem"
+        required
+        readonly
+      ></textarea>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Possible Problem
+      </label>
+
+      <textarea
+        id="formPossibleProblem"
+        name="possible_problem"
+        readonly
+      ></textarea>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Likely Reason
+      </label>
+
+      <textarea
+        id="formReason"
+        name="reason"
+        readonly
+      ></textarea>
+
+    </div>
+
+
+    <input
+      type="hidden"
+      name="_subject"
+      value="New Joe & Josh Smart Tech Support Request"
+    >
+
+
+    <button
+      id="requestButton"
+      class="request-button"
+      type="submit"
+    >
+      📩 Send Request to Joe &amp; Josh
+    </button>
+
+
+    <div
+      id="formStatus"
+      class="status"
+    ></div>
+
+
+  </form>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="card">
+
+  <div style="text-align:center;">
+
+    <span
+      class="badge"
+      style="background:#eff6ff;color:#2563eb;"
+    >
+      SIMPLE PROCESS
+    </span>
+
+    <h2 style="margin-top:15px;">
+      How It Works
+    </h2>
+
+  </div>
+
+
+  <div class="steps">
+
+
+    <div class="step">
+
+      <div class="step-icon">
+        📝
+      </div>
+
+      <h3>
+        1. Tell Us
+      </h3>
+
+      <p>
+        Enter your details and describe
+        your computer problem.
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-icon">
+        🤖
+      </div>
+
+      <h3>
+        2. Analyze
+      </h3>
+
+      <p>
+        Our smart assistant analyzes
+        the possible problem.
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-icon">
+        📩
+      </div>
+
+      <h3>
+        3. Send Request
+      </h3>
+
+      <p>
+        Send your support request
+        to Joe &amp; Josh.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <strong>
+    JOE &amp; JOSH
+  </strong>
+
+  <p>
+    Smart Computer &amp; Tech Support
+  </p>
+
+  <p>
+    We Fix. You Relax.
+  </p>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   GOOGLE APPS SCRIPT URL
+   ========================================== */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbx8E7yGBW9eIz7qjwy2Z9vTSjmkepzCUupImvfWsDZNrevz3grvFLEMAY4xobtAJFg6/exec";
+
+
+/* ==========================================
+   ELEMENTS
+   ========================================== */
+
+const analyzeButton =
+document.getElementById("analyzeButton");
+
+const loading =
+document.getElementById("loading");
+
+const result =
+document.getElementById("result");
+
+const sendSection =
+document.getElementById("sendSection");
+
+
+/* ==========================================
+   ANALYZE
+   ========================================== */
+
+analyzeButton.addEventListener(
+  "click",
+  analyzeProblem
+);
+
+
+async function analyzeProblem() {
+
+
+  const name =
+  document.getElementById("customerName")
+  .value
+  .trim();
+
+
+  const phone =
+  document.getElementById("customerPhone")
+  .value
+  .trim();
+
+
+  const category =
+  document.getElementById("category")
+  .value;
+
+
+  const problem =
+  document.getElementById("problem")
+  .value
+  .trim();
+
+
+  /* VALIDATION */
+
+  if (!name) {
+
+    alert("Please enter your name.");
+
+    return;
+  }
+
+
+  if (!phone) {
+
+    alert("Please enter your phone number.");
+
+    return;
+  }
+
+
+  if (!category) {
+
+    alert("Please select a service category.");
+
+    return;
+  }
+
+
+  if (!problem) {
+
+    alert("Please describe your problem.");
+
+    return;
+  }
+
+
+  /* LOADING */
+
+  analyzeButton.disabled = true;
+
+  analyzeButton.textContent =
+  "⏳ Analyzing...";
+
+  loading.style.display =
+  "block";
+
+
+  try {
+
+
+    const response =
+    await fetch(
+      API_URL,
+      {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+          "text/plain;charset=utf-8"
+        },
+
+        body:
+        JSON.stringify({
+
+          category:
+          category,
+
+          problem:
+          problem
+
+        })
+
+      }
+    );
+
+
+    const text =
+    await response.text();
+
+
+    let data;
+
+
+    try {
+
+      data =
+      JSON.parse(text);
+
+    } catch (e) {
+
+      throw new Error(
+        "The server returned an invalid response."
+      );
+
+    }
+
+
+    if (!data.success) {
+
+      throw new Error(
+        data.error ||
+        "Gemini could not analyze the problem."
+      );
+
+    }
+
+
+    /* DISPLAY RESULT */
+
+    document.getElementById(
+      "possibleProblem"
+    ).textContent =
+    data.possibleProblem ||
+    "Not enough information.";
+
+
+    document.getElementById(
+      "reason"
+    ).textContent =
+    data.reason ||
+    "The cause cannot be confirmed without checking the device.";
+
+
+    /* COPY TO FORM */
+
+    document.getElementById(
+      "formName"
+    ).value =
+    name;
+
+
+    document.getElementById(
+      "formPhone"
+    ).value =
+    phone;
+
+
+    document.getElementById(
+      "formCategory"
+    ).value =
+    category;
+
+
+    document.getElementById(
+      "formProblem"
+    ).value =
+    problem;
+
+
+    document.getElementById(
+      "formPossibleProblem"
+    ).value =
+    data.possibleProblem || "";
+
+
+    document.getElementById(
+      "formReason"
+    ).value =
+    data.reason || "";
+
+
+    /* SHOW */
+
+    result.style.display =
+    "block";
+
+
+    sendSection.style.display =
+    "block";
+
+
+    result.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+
+  } catch (error) {
+
+
+    alert(
+      "Analysis failed.\n\n" +
+      error.message
+    );
+
+
+  } finally {
+
+
+    analyzeButton.disabled =
+    false;
+
+
+    analyzeButton.textContent =
+    "🤖 Analyze My Problem";
+
+
+    loading.style.display =
+    "none";
+
+  }
+
+}
+
+
+/* ==========================================
+   FORMSPREE
+   ========================================== */
+
+document
+.getElementById("supportForm")
+.addEventListener(
+  "submit",
+  async function(event) {
+
+
+    event.preventDefault();
+
+
+    const form =
+    this;
+
+
+    const button =
+    document.getElementById(
+      "requestButton"
+    );
+
+
+    const status =
+    document.getElementById(
+      "formStatus"
+    );
+
+
+    button.disabled =
+    true;
+
+
+    button.textContent =
+    "⏳ Sending...";
+
+
+    try {
+
+
+      const
